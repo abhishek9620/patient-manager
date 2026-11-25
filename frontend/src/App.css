@@ -1,0 +1,512 @@
+:root {
+  --bg: #f4f7fb;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --primary: #0284c7;
+  --primary-hover: #0369a1;
+  --success: #16a34a;
+  --success-bg: #dcfce7;
+  --success-text: #166534;
+  --admitted-bg: #e0f2fe;
+  --admitted-text: #075985;
+  --danger: #dc2626;
+  --danger-hover: #b91c1c;
+  --danger-bg: #fee2e2;
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.app-header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-top: 2px;
+}
+
+/* Alerts & Toast */
+.toast-success {
+  background: var(--success-bg);
+  color: var(--success-text);
+  border: 1px solid #86efac;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.alert-error {
+  background: var(--danger-bg);
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  margin-bottom: 16px;
+  font-size: 0.92rem;
+}
+
+/* Stats */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.stat-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.stat-admitted {
+  color: var(--primary);
+}
+
+.stat-discharged {
+  color: var(--success);
+}
+
+/* Controls */
+.controls-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.controls-grid {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(3, 1fr) auto;
+  gap: 12px;
+  align-items: end;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.control-group label,
+.form-group label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.control-group input,
+.control-group select,
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 9px 11px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: #fff;
+  color: var(--text);
+}
+
+.control-group input:focus,
+.control-group select:focus,
+.form-group input:focus,
+.form-group select:focus {
+  outline: 2px solid #bae6fd;
+  border-color: var(--primary);
+}
+
+/* Buttons */
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, opacity 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--primary-hover);
+}
+
+.btn-secondary {
+  background: #e2e8f0;
+  color: var(--text);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #cbd5e1;
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: #fff;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: var(--danger-hover);
+}
+
+.btn-sm {
+  padding: 6px 10px;
+  font-size: 0.82rem;
+}
+
+.btn-success {
+  background: var(--success);
+  color: #fff;
+}
+
+.btn-success:hover:not(:disabled) {
+  background: #15803d;
+}
+
+.btn-outline {
+  background: #fff;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-outline:hover:not(:disabled) {
+  background: #f1f5f9;
+}
+
+.btn-danger-outline {
+  background: #fff;
+  color: var(--danger);
+  border: 1px solid #fecaca;
+}
+
+.btn-danger-outline:hover:not(:disabled) {
+  background: var(--danger-bg);
+}
+
+.btn-icon {
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+/* List / Table */
+.list-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.patient-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.patient-table th {
+  background: #f8fafc;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.patient-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.92rem;
+  vertical-align: middle;
+}
+
+.patient-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.patient-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.patient-name-cell {
+  font-weight: 600;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badge-admitted {
+  background: var(--admitted-bg);
+  color: var(--admitted-text);
+}
+
+.badge-discharged {
+  background: var(--success-bg);
+  color: var(--success-text);
+}
+
+/* Empty State */
+.empty-state {
+  padding: 48px 16px;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* Mobile Cards (hidden on desktop/tablet) */
+.mobile-cards {
+  display: none;
+}
+
+/* Modals */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 100;
+}
+
+.modal-card {
+  background: var(--surface);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 620px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 22px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+}
+
+.modal-card-sm {
+  max-width: 440px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.modal-header h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field-error {
+  color: var(--danger);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.confirm-text {
+  color: var(--text);
+  margin-bottom: 20px;
+  font-size: 0.96rem;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Tablet breakpoint */
+@media (max-width: 1024px) {
+  .controls-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .control-search {
+    grid-column: 1 / -1;
+  }
+
+  .control-reset {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Mobile breakpoint */
+@media (max-width: 767px) {
+  .app-container {
+    padding: 16px 12px 36px;
+  }
+
+  .app-header h1 {
+    font-size: 1.4rem;
+  }
+
+  .app-header .btn-primary {
+    width: 100%;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .controls-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .table-wrapper {
+    display: none;
+  }
+
+  .mobile-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .patient-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px;
+    background: #fff;
+  }
+
+  .patient-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .patient-card-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+
+  .patient-card-sub {
+    color: var(--muted);
+    font-size: 0.86rem;
+  }
+
+  .patient-card-details {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4px;
+    font-size: 0.88rem;
+    margin-bottom: 12px;
+  }
+
+  .detail-label {
+    color: var(--muted);
+    font-weight: 600;
+  }
+
+  .patient-card-actions .action-buttons {
+    display: flex;
+    width: 100%;
+  }
+
+  .patient-card-actions .btn {
+    flex: 1;
+    text-align: center;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
